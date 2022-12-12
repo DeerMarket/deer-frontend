@@ -1,0 +1,346 @@
+@import "../styles/_theme.scss";
+
+$breakpoint-1: 832px;
+$breakpoint-2: 1080px;
+
+.header {
+  background-color: $white;
+  font-size: 20px;
+  box-shadow: 0 0 2px 1px $gray-300;
+}
+
+.container {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $breakpoint-1) {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+      "logo toggle"
+      "search search"
+      "nav nav"
+      "user buttons";
+  }
+}
+
+.logo {
+  min-width: 80px;
+  grid-area: logo;
+
+  @media (max-width: $breakpoint-1) {
+    flex: 100;
+    margin-bottom: auto;
+  }
+}
+.search {
+  grid-area: search;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+  margin: 0 2rem 0 3rem;
+  padding-left: 1rem;
+  border: 1px solid $gray-400;
+  border-radius: 100px;
+  background-color: $gray-200;
+  box-shadow: 0 0 4px 2px transparent;
+  transition: box-shadow 0.2s ease-in-out, background-color 0.3s ease-in-out;
+  min-width: 100px;
+  
+  @media (max-width: $breakpoint-2) {
+    padding-left: 0;
+    margin: 0 1rem 0 1rem;
+  }
+  @media (max-width: $breakpoint-1) {
+    padding-left: 1rem;
+    max-width: none;
+    margin: 1.62rem 0 0.62rem;
+  }
+  
+  svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 0.5rem;
+    stroke: $gray-600;
+    
+    @media (min-width: $breakpoint-1) and (max-width: $breakpoint-2) {
+      display: none;
+    }
+  }
+  input {
+    min-width: 0;
+    padding: 0.4rem 1rem;
+    flex: 1;
+    border: 1px solid transparent;
+    border-radius: 100px;
+    box-shadow: 0 0 4px 2px transparent;
+    background-color: transparent;
+    outline: none;
+    font-size: 1rem;
+    color: $gray-600;
+    transition: border 0.2s ease-in-out, box-shadow 0.1s ease-in-out;
+    
+    &:focus {
+      border: 1px solid adjust-color($primary, $alpha: -0.5);
+      box-shadow: 0 0 4px 2px adjust-color($light, $alpha: -0.6);
+      background-color: $white;
+    }
+  }
+  &:hover {
+    box-shadow: 0 0 4px 2px adjust-color($light, $alpha: -0.6);
+    background-color: $gray-100;
+  }
+}
+
+.buttons {
+  grid-area: buttons;
+  margin: 0 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-right: 1px solid $gray-400;
+  padding-right: 0.6rem;
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.33rem;
+    border-radius: 100px;
+
+    &:hover {
+      background-color: $gray-200;
+    }
+    &:active {
+      background-color: $gray-300;
+    }
+    &:focus-visible {
+      box-shadow: 0 0 0 2px $light;
+      outline: none;
+    }
+  }
+
+  svg {
+    height: 1.8rem;
+    width: 1.8rem;
+    stroke: $gray-900;
+  }
+}
+
+.nav {
+  grid-area: nav;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0 1rem 0 0;
+  padding-left: 0.4rem;
+
+  @media (max-width: $breakpoint-1) {
+    flex-direction: column;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    align-items: center;
+    display: flex;
+    gap: 0.5rem;
+    outline: none;
+    color: $gray-700;
+    width: 100%;
+    height: 100%;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+
+    svg {
+      stroke-width: 3px;
+      margin-top: 3px;
+    }
+
+    &:focus-visible {
+      box-shadow: 0 0 0 2px $light;
+    }
+  }
+}
+.navItem {
+  border-radius: 100px;
+  transition: background-color 0.2s ease-in-out;
+  position: relative;
+
+  @media (max-width: $breakpoint-1) {
+    width: 100%;
+    margin: 0.2rem 0;
+    background-color: transparent !important;
+  }
+
+  &:hover {
+    background-color: $gray-200;
+  }
+  &:active {
+    background-color: $gray-300;
+  }
+
+  &:hover > div,
+  &:focus-within > div {
+    opacity: 1;
+    max-height: 100vh;
+
+    @media (min-width: $breakpoint-1) {
+      overflow: visible;
+    }
+  }
+
+  & > div {
+    @media (max-width: $breakpoint-1) {
+      transition: all 0.1s;
+    }
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+
+    position: absolute;
+    top: 90%;
+    right: 0;
+    z-index: 1;
+    min-width: 200px;
+    width: max-content;
+
+    @media (max-width: $breakpoint-1) {
+      position: relative;
+      width: 100%;
+    }
+
+    & > ul {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      background-color: $white;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 4px 2px $gray-200;
+
+      @media (max-width: $breakpoint-1) {
+        box-shadow: none;
+      }
+
+      li {
+        gap: 0.5rem;
+        border-radius: 0.5rem;
+        transition: background-color 0.2s ease-in-out;
+
+        &:hover {
+          background-color: $gray-200;
+        }
+        &:active {
+          background-color: $gray-300;
+        }
+        &:focus-visible {
+          box-shadow: 0 0 0 2px $light;
+        }
+      }
+
+      a {
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+}
+
+.user {
+  grid-area: user;
+
+  & > button > div {
+    @media (max-width: $breakpoint-2) {
+      display: none;
+    }
+  }
+}
+
+/* Mobile */
+.mobileToggle {
+  grid-area: toggle;
+  margin: 0 0 0 auto;
+
+  position: relative;
+  cursor: pointer;
+  width: 30px;
+  height: 25px;
+  display: none;
+  min-width: 30px;
+
+  @media (max-width: $breakpoint-1) {
+    display: block;
+  }
+
+  span {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 100px;
+    display: inline-block;
+    transition: 0.3s ease;
+    left: 0;
+    background-color: $primary;
+  }
+
+  span:nth-child(1) {
+    top: 0;
+  }
+
+  span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  span:nth-child(3) {
+    bottom: 0;
+  }
+}
+
+.navToggle {
+  appearance: none;
+  display: none;
+  visibility: hidden;
+  ~ .search,
+  ~ .nav,
+  ~ .buttons,
+  ~ .user {
+    @media (max-width: $breakpoint-1) {
+      display: none;
+    }
+  }
+}
+.navToggle:checked {
+  ~ .search,
+  ~ .nav,
+  ~ .buttons,
+  ~ .user {
+    display: flex;
+  }
+
+  & ~ label:nth-child(3) {
+    span:nth-child(1) {
+      transform: rotate(45deg);
+      transform-origin: top left;
+      width: 100%;
+      left: 3px;
+    }
+    span:nth-child(3) {
+      transform: rotate(-45deg);
+      transform-origin: top left;
+      width: 100%;
+      bottom: 0;
+      box-shadow: 0 0 10px #000000;
+    }
+    span:nth-child(2) {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+  }
+}

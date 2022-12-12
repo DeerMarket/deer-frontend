@@ -1,0 +1,21 @@
+@import "../styles/_theme.scss";
+
+.user {
+  display: flex;
+  padding: 7px;
+  border: none;
+  border-radius: 100px;
+  align-items: center;
+  cursor: pointer;
+  background: $gray-200;
+
+  & > span {
+    margin: 0 7px;
+  }
+  & > div {
+    background-color: $white;
+    color: $gray-700;
+    border-radius: 100px;
+    padding: 0.1rem 0.5rem;
+  }
+}
