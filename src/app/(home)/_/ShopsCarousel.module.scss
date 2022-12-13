@@ -1,0 +1,17 @@
+.head {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+}
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 2.6rem;
+    padding-bottom: 4rem;
+}

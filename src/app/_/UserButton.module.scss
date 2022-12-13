@@ -1,8 +1,8 @@
-@import "../styles/_theme.scss";
+@import "../../styles/_theme.scss";
 
 .user {
   display: flex;
-  padding: 7px;
+  padding: .4rem;
   border: none;
   border-radius: 100px;
   align-items: center;
@@ -10,12 +10,12 @@
   background: $gray-200;
 
   & > span {
-    margin: 0 7px;
+    margin: 0 .33rem;
   }
   & > div {
     background-color: $white;
-    color: $gray-700;
+    color: $black;
     border-radius: 100px;
-    padding: 0.1rem 0.5rem;
+    padding: 0.1rem 0.6rem;
   }
 }

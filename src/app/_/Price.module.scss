@@ -1,10 +1,13 @@
+@import "../../styles/theme.scss";
+
 .div {
   display: flex;
   align-items: center;
   margin: .33em 0;
 
   & > span {
-    margin-left: .62em;
+    margin-left: .42em;
     font-weight: 500;
+    color: $black;
   }
 }

@@ -2,7 +2,7 @@ import s from "./Price.module.scss";
 
 export default function Price({
   amount,
-  size = 22,
+  size = 18,
 }: {
   amount?: number | string;
   size?: number;

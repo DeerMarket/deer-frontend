@@ -1,15 +1,17 @@
 // Base Colors
 $white: #fff;
-$gray-100: #F0F8FF;
-$gray-200: #DBE8F3;
-$gray-300: #CAD5E3;
-$gray-400: #BBCCE1;
-$gray-500: #919EBF;
-$gray-600: #546683;
+$gray-100: #eff0fa;
+$gray-200: #e7e8f8;
+$gray-300: #e3e4f7;
+$gray-400: #dfe0f6;
+$gray-500: #dbddf5;
+$gray-600: #d7d9f4;
 $gray-700: #455368;
 $gray-800: #25384B;
 $gray-900: #08223C;
 $black: #010101;
+
+
 
 // Accent Colors
 $blue: #32c4f9;
@@ -25,3 +27,6 @@ $orange: #cf8d04;
 $primary: #0412ff;
 $light: #9ac9ff;
 $dark: #001560;
+
+// config
+$container-width: 1200px;

@@ -1,0 +1,7 @@
+@import "../../styles/_theme.scss";
+
+.container {
+    max-width: $container-width;
+    margin: 1rem auto;
+    padding: 0 1rem;
+}

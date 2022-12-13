@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+import Header from "./_/Header";
 import "../styles/global.scss";
 import localFont from "@next/font/local";
 

@@ -1,5 +1,5 @@
 "use client";
-import Price from "./common/Price";
+import Price from "./Price";
 import s from "./UserButton.module.scss";
 
 export default function UserButton() {

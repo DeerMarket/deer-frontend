@@ -1,6 +1,6 @@
 import Link from "next/link";
 import s from "./Header.module.scss";
-import Logo from "../assets/svg/logomark.svg";
+import Logo from "../../assets/svg/logomark.svg";
 import Image from "next/image";
 import {
   MagnifyingGlassIcon,
