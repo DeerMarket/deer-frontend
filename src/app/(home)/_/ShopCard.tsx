@@ -21,6 +21,7 @@ export default function ShopCard({
       <div className={s.top}>
         <Image src={shop.logo} alt={shop.name} width={100} height={100} />
         <div>
+          <h5>pirates</h5>
           <h3>{shop.name}</h3>
         </div>
       </div>

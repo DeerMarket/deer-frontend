@@ -4,6 +4,8 @@ import localFont from "@next/font/local";
 
 const manRopeFont = localFont({
   src: "../assets/fonts/Manrope-VariableFont_wght.ttf",
+  fallback: ["system-ui", "sans-serif"],
+  weight: "100 900",
 });
 
 export default function RootLayout({

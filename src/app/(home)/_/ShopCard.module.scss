@@ -36,6 +36,18 @@
     width: 33.33%;
     border: 8px solid $white;
   }
+
+  h5 {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 4px 6px;
+    line-height: 1;
+    border-radius: 4px;
+    background-color: $gray-200;
+    color: $gray-800;
+    display: inline-block;
+    margin-bottom: 0.2em;
+  }
 }
 
 .cover {
