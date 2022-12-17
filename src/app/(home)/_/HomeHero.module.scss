@@ -1,0 +1,86 @@
+@import "../../../styles/_theme.scss";
+
+.parent {
+  height: 360px;
+  background-color: $white;
+  position: relative;
+  margin-bottom: 4rem;
+
+  &::after {
+    content: "";
+    display: block;
+    background-image: linear-gradient(to left, $purple 0%, $red 20%, $yellow 40%, $green 60%, $purple 80%, $yellow 100%);
+    background-size: 100%;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    bottom: -1px;
+  }
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    font-size: 2.4rem;
+    margin-bottom: 0.4em;
+  }
+
+  p {
+    color: $gray-700;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: 1.62;
+    margin-bottom: 1.8em;
+    max-width: 800px;
+  }
+
+  nav {
+    display: flex;
+    gap: 1rem;
+  }
+
+  a {
+    color: $primary;
+    font-size: 1.21rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    cursor: pointer;
+    padding: 0 .2em;
+    line-height: 2.7em;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $dark;
+    }
+  }
+}
+
+a.mainBtn {
+    background-color: $primary;
+    background-image: linear-gradient(125deg, $primary 0%, $purple 100%);
+    border-radius: 100px;
+    font-size: 1.21rem;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0 1.6em;
+    line-height: 2.7em;
+    border: none;
+    cursor: pointer;
+    box-shadow: $light 0 0 0;
+    transition: box-shadow 0.2s ease;
+    color: $white;
+    
+    &:hover {
+        box-shadow: $light 0px 2px 16px;
+        color: $white;
+    }
+}

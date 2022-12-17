@@ -29,6 +29,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
             width: 50vw;
             min-width: 300px;
             min-height: 700px;
+            opacity: 0.5;
         }
 
         body::after {
@@ -43,6 +44,7 @@ export default function layout({ children }: { children: React.ReactNode }) {
             min-width: 300px;
             min-height: 500px;
             transform: rotate(45deg);
+            opacity: 0.5;
         }
       `}</style>
     </div>

@@ -1,5 +1,6 @@
 import ShopsCarousel from "./_/ShopsCarousel";
 import s from "./page.module.scss";
+import HomeHero from "./_/HomeHero";
 
 const shops = [
   {
@@ -56,11 +57,30 @@ const shops = [
     items: 0,
     volume: 0,
   },
+  {
+    name: "A shop",
+    description: "Shop Description goes here",
+    logo: "https://i.pinimg.com/564x/02/e6/62/02e662a386b396efe809a4bdcd2446cb.jpg",
+    cover:
+      "https://i.pinimg.com/564x/9d/cc/da/9dccdaa36e0cac9b5d45593249618487.jpg",
+    items: 0,
+    volume: 0,
+  },
+  {
+    name: "A shop",
+    description: "Shop Description goes here",
+    logo: "https://i.pinimg.com/564x/02/e6/62/02e662a386b396efe809a4bdcd2446cb.jpg",
+    cover:
+      "https://i.pinimg.com/564x/9d/cc/da/9dccdaa36e0cac9b5d45593249618487.jpg",
+    items: 0,
+    volume: 0,
+  },
 ];
 
 export default function Homepage() {
   return (
     <div>
+      <HomeHero />
       <div className={s.container}>
         <ShopsCarousel
           title="Featured Shops"
